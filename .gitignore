@@ -1,0 +1,4 @@
+## Terraform file
+terraform.*
+.terraform*
+*.tfvars
