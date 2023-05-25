@@ -1,8 +1,9 @@
 
+```
 wget https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img
 apt update -y
 apt install libguestfs-tools
-```
+
 virt-customize -a focal-server-cloudimg-amd64.img --install qemu-guest-agent
 qm create 9000 --name "ubuntu-cloud-focal-with-agent" --memory 512 --cores 1 --net0 virtio,bridge=vmbr0
 qm importdisk 9000 focal-server-cloudimg-amd64.img local-lvm 
