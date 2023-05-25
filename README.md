@@ -2,7 +2,7 @@
 wget https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img
 apt update -y
 apt install libguestfs-tools
-
+```
 virt-customize -a focal-server-cloudimg-amd64.img --install qemu-guest-agent
 qm create 9000 --name "ubuntu-cloud-focal-with-agent" --memory 512 --cores 1 --net0 virtio,bridge=vmbr0
 qm importdisk 9000 focal-server-cloudimg-amd64.img local-lvm 
@@ -12,7 +12,7 @@ qm set 9000 --ide2 local-lvm:cloudinit
 qm set 9000 --serial0 socket --vga serial0
 qm set 9000 --agent enabled=1
 qm template 9000 
-
+```
 
 ## Example resource template
 This template will work for a standard cloud-init deployment using the ubuntu cloud image as the source template. 
