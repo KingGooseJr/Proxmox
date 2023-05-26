@@ -1,4 +1,5 @@
 
+```
 wget https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img
 apt update -y
 apt install libguestfs-tools
@@ -12,7 +13,7 @@ qm set 9000 --ide2 local-lvm:cloudinit
 qm set 9000 --serial0 socket --vga serial0
 qm set 9000 --agent enabled=1
 qm template 9000 
-
+```
 
 ## Example resource template
 This template will work for a standard cloud-init deployment using the ubuntu cloud image as the source template. 
